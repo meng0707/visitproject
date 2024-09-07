@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ส่งคำร้องแจ้งซ่อม</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ส่งคำร้องแจ้งซ่อม</h1>
+        <button id="backButton">ย้อนกลับไปหน้า Dashboard</button>
+    </header>
+
+    <main>
+        <form id="repairForm">
+            <label for="title">หัวข้อ:</label>
+            <select id="title" name="title" required>
+                <option value="ไฟฟ้า">ไฟฟ้า</option>
+                <option value="ประปา">ประปา</option>
+                <option value="อาคาร">อาคาร</option>
+            </select><br>
+
+            <label for="detail">รายละเอียด:</label>
+            <input type="text" id="detail" name="detail" required><br>
+
+            <label for="location">สถานที่:</label>
+            <input type="text" id="location" name="location" required><br>
+
+            <button type="submit">ส่งคำร้อง</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 652021045 / 652021048</p>
+    </footer>
+
+    <script src="report.js"></script>
+</body>
+</html>

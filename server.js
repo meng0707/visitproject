@@ -58,6 +58,18 @@ app.post('/login', async (req, res) => {
 // เส้นทางแจ้งซ่อม
 app.use('/api', reportRoutes);
 
+// เส้นทางสำหรับดึงข้อมูลรายงานทั้งหมด
+app.get('/api/report', authenticateToken, async (req, res) => {
+    try {
+        const reports = await Report.find(); // ดึงข้อมูลรายงานทั้งหมดจากฐานข้อมูล
+        res.json(reports);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+
+
 // เชื่อมต่อ MongoDB
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('เชื่อมต่อ MongoDB สำเร็จ'))

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="styles.css"> <!-- เชื่อมโยงกับไฟล์ CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -14,28 +14,20 @@
                 <li><a href="report.html">หน้าแจ้งซ่อม</a></li>
                 <li><a href="#">หน้าตรวจสอบรายการแจ้งซ่อม</a></li>
                 <li><a href="#">หน้าเบิกพัสดุ</a></li>
+                <li><button id="logout">ออกจากระบบ</button></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="stats">
-            <div class="card">
-                <h2>Statistics</h2>
-                <!-- เพิ่มเนื้อหาสถิติที่นี่ -->
-            </div>
-            <div class="card">
-                <h2>Recent Activity</h2>
-                <!-- เพิ่มกิจกรรมล่าสุดที่นี่ -->
-            </div>
-        </section>
         <section class="profile">
             <h2>User Profile</h2>
             <!-- เพิ่มข้อมูลผู้ใช้ที่นี่ -->
         </section>
+        <section id="reports">
+            <h2>รายงานล่าสุด</h2>
+            <div id="reportList"></div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 652021045 / 652021048</p>
-    </footer>
-    <script src="dashboard.js"></script> <!-- เชื่อมโยงกับไฟล์ JavaScript -->
+    <script src="dashboard.js"></script>
 </body>
 </html>

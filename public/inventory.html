@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เบิกพัสดุ</title>
+    <link rel="stylesheet" href="styles/inventory.css">
+</head>
+
+<body>
+    <header>
+        <h1>ระบบเบิกพัสดุ</h1>
+        <nav>
+            <ul>
+                <li><a href="reportedit.html">สำหรับช่างซ่อม</a></li>
+                <li><a href="report.html">หน้าแจ้งซ่อม</a></li>
+                <li><a href="dashboard.html">หน้าตรวจสอบรายการแจ้งซ่อม</a></li>
+                <li><a href="inventory.html">หน้าเบิกพัสดุ</a></li>
+                <li><button id="logout">ออกจากระบบ</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="inventory">
+            <h2>เบิกพัสดุ</h2>
+            <form id="inventoryForm">
+                <label for="category">ประเภท:</label>
+                <select id="category" name="category" required>
+                    <option value="">เลือกประเภท</option>
+                    <option value="ไฟฟ้า">ไฟฟ้า</option>
+                    <option value="ประปา">ประปา</option>
+                    <option value="อาคาร">อาคาร</option>
+                </select><br>
+
+                <label for="productName">ชื่อพัสดุ:</label>
+                <select id="productName" name="productName" required>
+                    <!-- ตัวเลือกจะถูกเติมโดย JavaScript -->
+                </select><br>
+
+                <label for="quantity">จำนวน:</label>
+                <input type="number" id="quantity" name="quantity" required><br>
+
+                <input type="hidden" id="receivedDate" name="receivedDate"><!-- Hidden field for auto timestamp -->
+
+                <button type="submit">ส่งคำร้องขอเบิกพัสดุ</button>
+            </form>
+        </section>
+    </main>
+    <script src="inventory.js"></script>
+</body>
+
+</html>

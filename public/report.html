@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ส่งคำร้องแจ้งซ่อม</title>
+    <link rel="stylesheet" href="styles/report.css">
+</head>
+<body>
+    <header>
+        <h1>ส่งคำร้องแจ้งซ่อม</h1>
+        <nav>
+            <ul>
+                <li><a href="reportedit.html">สำหรับช่างซ่อม</a></li>
+                <li><a href="report.html">หน้าแจ้งซ่อม</a></li>
+                <li><a href="dashboard.html">หน้าตรวจสอบรายการแจ้งซ่อม</a></li>
+                <li><a href="inventory.html">หน้าเบิกพัสดุ</a></li>
+                <li><button id="logout">ออกจากระบบ</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="repairForm">
+            <label for="title">หัวข้อ:</label>
+            <select id="title" name="title" required>
+                <option value="ไฟฟ้า">ไฟฟ้า</option>
+                <option value="ประปา">ประปา</option>
+                <option value="อาคาร">อาคาร</option>
+            </select><br>
+
+            <label for="detail">รายละเอียด:</label>
+            <input type="text" id="detail" name="detail" required><br>
+
+            <label for="location">สถานที่:</label>
+            <input type="text" id="location" name="location" required><br>
+
+            <button type="submit">ส่งคำร้อง</button>
+        </form>
+
+        <!-- เพิ่มฟอร์มสำหรับอัปเดตสถานะ -->
+        <form id="statusUpdateForm">
+        </form>
+    </main>
+    <script src="report.js"></script>
+    <script src="updateStatus.js"></script> <!-- เพิ่มลิงก์ไปยังไฟล์ updateStatus.js -->
+</body>
+</html>

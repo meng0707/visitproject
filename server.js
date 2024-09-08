@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 const authenticateToken = require('./middleware/authenticateToken');
-const reportRoutes = require('./routes/report'); // นำเข้าเส้นทางแจ้งซ่อม
+const reportRoutes = require('./routes/report'); 
 
 const app = express();
 app.use(bodyParser.json());

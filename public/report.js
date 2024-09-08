@@ -12,7 +12,9 @@ document.getElementById('repairForm').addEventListener('submit', async (event) =
     const detail = document.getElementById('detail').value;
     const location = document.getElementById('location').value;
 
+
     console.log({ title, detail, location }); // ตรวจสอบข้อมูลที่ส่ง
+
 
     const requestData = {
         title,
@@ -25,7 +27,8 @@ document.getElementById('repairForm').addEventListener('submit', async (event) =
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}` // ส่ง token ใน header
+                'Authorization': `Bearer ${localStorage.getItem('token')}`, // ส่ง token ใน header
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(requestData)
         });
@@ -36,6 +39,7 @@ document.getElementById('repairForm').addEventListener('submit', async (event) =
         } else {
             const errorData = await response.json();
             alert(`เกิดข้อผิดพลาดในการส่งคำร้อง: ${errorData.error}`);
+            alert('เกิดข้อผิดพลาดในการส่งคำร้อง');
         }
     } catch (error) {
         console.error('Error:', error);

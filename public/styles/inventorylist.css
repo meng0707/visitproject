@@ -1,0 +1,47 @@
+/* ตั้งค่าพื้นฐานสำหรับหน้า */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50; /* สีเทาเข้ม */
+    color: #ecf0f1; /* สีขาวนวล */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.inventory-container {
+    background-color: #ecf0f1; /* สีพื้นหลังเทาอ่อน */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.inventory-item {
+    background-color: #3498db; /* สีน้ำเงิน */
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8
+    }

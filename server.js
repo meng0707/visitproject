@@ -5,9 +5,13 @@ const bodyParser = require('body-parser');
 const User = require('./models/User');
 const Report = require('./models/Report'); // นำเข้าโมเดล Report
 const inventoryRoutes = require('./routes/inventoryRoutes');
+const inventoryController = require('./controllers/inventoryController'); // ตรวจสอบเส้นทางที่ถูกต้อง
+const Inventory = require('./models/Inventory'); // นำเข้าโมเดล Inventory
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+//const response = await fetch('/api/inventory');
+
 
 const authenticateToken = require('./middleware/authenticateToken');
 const reportRoutes = require('./routes/report'); // นำเข้าเส้นทาง
@@ -58,11 +62,24 @@ app.post('/index', async (req, res) => {
     }
 });
 
+// เส้นทาง API
+app.get('/api/inventory', async (req, res) => {
+    try {
+        const inventoryItems = await Inventory.find(); // ดึงข้อมูลจาก MongoDB
+        res.json(inventoryItems); // ส่งข้อมูลกลับเป็น JSON
+    } catch (err) {
+        console.error('Error retrieving inventory:', err);
+        res.status(500).json({ error: 'Failed to retrieve inventory', details: err.message });
+    }
+});
+
 // ใช้งานเส้นทางของรายงาน
 app.use('/api/report', authenticateToken, reportRoutes); // ใช้ middleware `authenticateToken` ก่อนเส้นทางรายงาน
 
 // ใช้เส้นทางสำหรับจัดการข้อมูลเบิกพัสดุ
 app.use('/api/inventory', inventoryRoutes);
+
+app.get('/api/inventory', inventoryController.getInventory); // ตรวจสอบว่าเส้นทางถูกต้อง
 
 // เชื่อมต่อ MongoDB
 mongoose.connect(process.env.MONGO_URI)

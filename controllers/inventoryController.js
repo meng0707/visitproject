@@ -24,3 +24,13 @@ exports.createInventory = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+// ฟังก์ชันเพื่อดึงข้อมูลเบิกพัสดุทั้งหมด
+exports.getInventory = async (req, res) => {
+    try {
+        const inventoryItems = await Inventory.find(); // ดึงข้อมูลจากฐานข้อมูล
+        res.json(inventoryItems); // ส่งข้อมูลกลับเป็น JSON
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to retrieve inventory', details: err.message }); // แสดงข้อผิดพลาด
+    }
+};

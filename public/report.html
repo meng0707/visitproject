@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ส่งคำร้องแจ้งซ่อม</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/report.css">
 </head>
 <body>
     <header>
         <h1>ส่งคำร้องแจ้งซ่อม</h1>
-        <button id="backButton">ย้อนกลับไปหน้า Dashboard</button>
+        <nav>
+            <ul>
+                <li><a href="reportedit.html">สำหรับช่างซ่อม</a></li>
+                <li><a href="report.html">หน้าแจ้งซ่อม</a></li>
+                <li><a href="dashboard.html">หน้าตรวจสอบรายการแจ้งซ่อม</a></li>
+                <li><a href="inventory.html">หน้าเบิกพัสดุ</a></li>
+                <li><button id="logout">ออกจากระบบ</button></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -29,12 +37,12 @@
 
             <button type="submit">ส่งคำร้อง</button>
         </form>
+
+        <!-- เพิ่มฟอร์มสำหรับอัปเดตสถานะ -->
+        <form id="statusUpdateForm">
+        </form>
     </main>
-
-    <footer>
-        <p>&copy; 652021045 / 652021048</p>
-    </footer>
-
     <script src="report.js"></script>
+    <script src="updateStatus.js"></script> <!-- เพิ่มลิงก์ไปยังไฟล์ updateStatus.js -->
 </body>
 </html>

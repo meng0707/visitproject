@@ -11,9 +11,10 @@
         <h1>ระบบแจ้งซ่อม</h1>
         <nav>
             <ul>
+                <li><a href="reportedit.html">สำหรับช่างซ่อม</a></li>
                 <li><a href="report.html">หน้าแจ้งซ่อม</a></li>
                 <li><a href="#">หน้าตรวจสอบรายการแจ้งซ่อม</a></li>
-                <li><a href="#">หน้าเบิกพัสดุ</a></li>
+                <li><a href="inventory.html">หน้าเบิกพัสดุ</a></li>
                 <li><button id="logout">ออกจากระบบ</button></li>
             </ul>
         </nav>
@@ -21,12 +22,15 @@
     <main>
         <section class="profile">
             <h2>User Profile</h2>
+            <div id="reportList"></div>
             <!-- เพิ่มข้อมูลผู้ใช้ที่นี่ -->
         </section>
+
         <section id="reports">
             <h2>รายงานล่าสุด</h2>
             <div id="reportList"></div>
         </section>
+
     </main>
     <script src="dashboard.js"></script>
 </body>

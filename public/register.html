@@ -4,19 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <link rel="stylesheet" href="styles/register.css">
 </head>
 <body>
-    <h1>Register</h1>
-    <form id="registerForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
+    <header>
+        <h1>Thaksin University</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Register</h1>
+            <form id="registerForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
 
-        <button type="submit">Register</button>
-    </form>
-
+                <button type="submit">Register</button>
+            </form>
+            <div class="switch-link">
+                <p>Already have an account? <a href="index.html">Login here</a></p>
+            </div>
+        </div>
+    </main>
     <script>
         document.getElementById('registerForm').addEventListener('submit', async (e) => {
             e.preventDefault();

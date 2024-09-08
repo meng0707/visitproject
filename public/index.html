@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <header>
+        <h1>Thaksin University</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h1 id="formTitle">Login</h1>
+            <form id="authForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" id="submitButton">Login</button>
+            </form>
+            <div class="switch-link">
+                <p>Don't have an account? <a href="register.html">Register here</a></p>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.getElementById('authForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const formTitle = document.getElementById('formTitle');
+            const submitButton = document.getElementById('submitButton');
+
+            if (formTitle.textContent === 'Login') {
+                // Login process
+                try {
+                    const response = await fetch('/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ username, password })
+                    });
+
+                    const result = await response.json();
+                    if (result.token) {
+                        alert('Login successful');
+                        // Redirect or handle login success
+                    } else {
+                        alert(result.message || 'Login failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            } else {
+                // Register process
+                try {
+                    const response = await fetch('/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ username, password })
+                    });
+
+                    const result = await response.text();
+                    alert(result);
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            }
+        });
+
+        // Check if we're on the register page
+        if (window.location.pathname.endsWith('register.html')) {
+            document.getElementById('formTitle').textContent = 'Register';
+            document.getElementById('submitButton').textContent = 'Register';
+        }
+    </script>
+    <script src="login.js"></script>
+</body>
+</html>

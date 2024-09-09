@@ -25,7 +25,7 @@ document.getElementById('updateStatusForm').addEventListener('submit', async (ev
 
         if (response.ok) {
             alert('สถานะอัปเดตเรียบร้อยแล้ว');
-            document.getElementById('updateStatusForm').reset(); // รีเซ็ตฟอร์มหลังจากอัปเดต
+            window.location.reload();
         } else {
             alert('เกิดข้อผิดพลาดในการอัปเดตสถานะ');
         }

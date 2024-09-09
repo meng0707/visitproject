@@ -18,7 +18,17 @@ document.getElementById('authForm').addEventListener('submit', async (e) => {
 
         const result = await response.json();
         localStorage.setItem('token', result.token); // เก็บ token
-        window.location.href = '/dashboard.html'; // เปลี่ยนเส้นทางไปที่หน้า dashboard
+
+        // ตรวจสอบ role และเปลี่ยนเส้นทางตาม role
+        if (result.role === 'Technician') {
+            alert('เข้าสู่ระบบในส่วนเจ้าหน้าที่ผู้ปฎิบัติงาน');
+            window.location.href = '/reportedit.html';
+        } else if (result.role === 'Informer') {
+            alert('เข้าสู่ระบบในส่วนผู้ใช้งานทั่วไป');
+            window.location.href = '/dashboard.html';
+        } else {
+            alert('เข้าสู่ระบบไม่สำเร็จ');
+        }
     } catch (error) {
         console.error('Error:', error);
         alert('Login failed. Please try again.');

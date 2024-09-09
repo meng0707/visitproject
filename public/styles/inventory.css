@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #007bff; /* Blue background */
+    background-color: #10bd66; /* Blue background */
     color: white;
     padding: 15px 0;
     text-align: center;
@@ -41,7 +41,7 @@ nav ul li a, nav ul li button {
 }
 
 nav ul li a:hover {
-    background-color: #0056b3; /* เปลี่ยนพื้นหลังเมื่อ hover */
+    background-color: #0fa55a; /* เปลี่ยนพื้นหลังเมื่อ hover */
 }
 
 nav ul li button {
@@ -91,7 +91,7 @@ form input, form textarea {
 }
 
 form button {
-    background-color: #007bff; /* Blue background for the submit button */
+    background-color: #10bd66; /* Blue background for the submit button */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -100,7 +100,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0fa55a;
 }
 
 /* Inventory List */

@@ -52,6 +52,10 @@ main {
     padding: 20px;
 }
 
+.stats, .profile, #reports {
+    margin-bottom: 20px;
+}
+
 .card {
     background-color: #f4f4f4;
     border-radius: 8px;
@@ -63,31 +67,23 @@ main {
     margin-top: 0;
 }
 
-#inventoryList {
+#reportList {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-.inventory-item {
+.report-item {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 100%; /* ใช้ให้เต็มความกว้าง */
-    max-width: 400px; /* จำกัดความกว้างสูงสุด */
+    width: 100%;
 }
 
-.inventory-item h2 {
-    font-size: 20px;
+.report-item h3 {
     margin-top: 0;
-    color: #333;
-}
-
-.inventory-item p {
-    margin: 5px 0;
-    color: #333;
 }
 
 footer {

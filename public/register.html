@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="styles/register.css">
 </head>
+
 <body>
     <header>
         <h1>มหาวิทยาลัยทักษิณ วิทยาเขตพัทลุง</h1>
@@ -14,12 +16,27 @@
         <div class="container">
             <h2>ลงทะเบียนบัญชีผู้ใช้ใหม่</h2>
             <form id="registerForm">
+                <label for="name">ชื่อจริง</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="surname">นามสกุล</label>
+                <input type="text" id="surname" name="surname" required>
+
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" required>
 
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
 
+                <label for="tel">เบอร์โทร</label>
+                <input type="text" id="tel" name="tel" required maxlength="10">
+
+                <label for="role">ตำแหน่ง</label>
+                <select id="role" name="role" required>
+                    <option value="Informer">ผู้ใช้งานทั่วไป</option>
+                    <option value="Technician">เจ้าหน้าที่ผู้ปฏิบัติงาน</option>
+                </select>
+                <br><br>
                 <button type="submit">ลงทะเบียน</button>
             </form>
             <div class="switch-link">
@@ -31,8 +48,12 @@
         document.getElementById('registerForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
+            const tel = document.getElementById('tel').value;
+            const role = document.getElementById('role').value;
 
             try {
                 const response = await fetch('/register', {
@@ -40,15 +61,22 @@
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ username, password })
+                    body: JSON.stringify({ name, surname, username, password, tel, role })
                 });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(errorText);
+                }
 
                 const result = await response.text();
                 alert(result);
+                window.location.href = '/dashboard.html';
             } catch (error) {
-                console.error('Error:', error);
+                alert(`Error: ${error.message}`);
             }
         });
     </script>
 </body>
+
 </html>

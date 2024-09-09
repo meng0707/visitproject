@@ -3,7 +3,7 @@ const User = require('../models/User');
 
 // สมัครสมาชิก
 exports.register = async (req, res) => {
-    const { username, password } = req.body;
+    const { name, surname, username, password, tel, rule } = req.body;
     try {
         // ตรวจสอบว่ามีผู้ใช้ที่ใช้ชื่อผู้ใช้นี้อยู่แล้วหรือไม่
         const existingUser = await User.findOne({ username });
@@ -11,9 +11,9 @@ exports.register = async (req, res) => {
 
         // แฮชรหัสผ่าน
         const hashedPassword = await bcrypt.hash(password, 10);
-        
+
         // สร้างผู้ใช้ใหม่
-        const user = new User({ username, password: hashedPassword });
+        const user = new User({ name, surname, username, password: hashedPassword, tel, rule });
         await user.save();
 
         res.status(201).send('User registered successfully');

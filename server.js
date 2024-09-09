@@ -28,13 +28,13 @@ app.get('/dashboard', authenticateToken, (req, res) => {
 
 // ในเส้นทางการลงทะเบียน (register route)
 app.post('/register', async (req, res) => {
-    const { username, password, role } = req.body;
+    const { name, surname, username, password, tel, role } = req.body; // เพิ่ม 'name', 'surname', และ 'tel'
     try {
         const existingUser = await User.findOne({ username });
         if (existingUser) return res.status(400).send('ชื่อผู้ใช้นี้มีอยู่แล้ว');
 
         const hashedPassword = await bcrypt.hash(password, 10);
-        const user = new User({ username, password: hashedPassword, role });
+        const user = new User({ name, surname, username, password: hashedPassword, tel, role }); // เพิ่ม 'name', 'surname', และ 'tel'
         await user.save();
 
         res.status(201).send('ลงทะเบียนผู้ใช้สำเร็จ');
@@ -42,6 +42,7 @@ app.post('/register', async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+
 
 // ในเส้นทางการล็อกอิน (login route)
 app.post('/index', async (req, res) => {

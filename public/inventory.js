@@ -75,7 +75,8 @@ document.getElementById('inventoryForm').addEventListener('submit', async (e) =>
 
         const result = await response.json();
         if (response.ok) {
-            alert('ส่งรายงานเรียบร้อยแล้ว');
+            alert('ส่งรายงานสำเร็จแล้ว');
+            document.getElementById('inventoryForm').reset(); // รีเซ็ตฟอร์มหลังส่งข้อมูล
         } else {
             console.error('Server Response:', result);
             alert('Error: ' + (result.error || 'Unknown error occurred'));

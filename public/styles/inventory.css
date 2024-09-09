@@ -29,13 +29,21 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 10px;
 }
 
-nav ul li a {
+nav ul li a, nav ul li button {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* เปลี่ยนพื้นหลังเมื่อ hover */
 }
 
 nav ul li button {
@@ -61,8 +69,10 @@ main {
 }
 
 h2 {
-    color: #007bff; /* Blue color for headings */
+    color: #333;
+    text-align: center;
 }
+
 
 /* Form Styles */
 form {

@@ -7,7 +7,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #007bff;
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -32,6 +32,10 @@ nav ul li a, nav ul li button {
     border: none;
     background: none;
     cursor: pointer;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* เปลี่ยนพื้นหลังเมื่อ hover */
 }
 
 nav ul li button {

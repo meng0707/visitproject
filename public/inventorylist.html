@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory List</title>
+    <title>รายการเบิกพัสดุทั้งหมด</title>
     <link rel="stylesheet" href="styles/inventorylist.css">
 </head>
+
 <body>
     <header>
-        <h1>รายการเบิกพัสดุ</h1>
+        <h1>📄 รายการเบิกพัสดุทั้งหมด</h1>
+        <nav>
+            <ul>
+                <li><a href="report.html">🔧 ระบบส่งคำร้องแจ้งซ่อม</a></li>
+                <li><a href="dashboard.html">📄 รายการแจ้งซ่อมทั้งหมด</a></li>
+                <li><a href="reportedit.html">📑 ระบบแก้ไขสถานะรายงาน</a></li>
+                <li><a href="inventory.html">📦 ระบบส่งคำร้องเบิกพัสดุ</a></li>
+                <li><button id="logout">ออกจากระบบ</button></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section id="inventoryList" class="inventory-container">
-            <!-- ข้อมูลการเบิกพัสดุจะถูกโหลดที่นี่ -->
+        <!-- <section id="inventoryList" class="inventory-container">
+            ข้อมูลการเบิกพัสดุจะถูกโหลดที่นี่
         </section>
-        <button id="backButton">กลับ</button>
+        <button id="backButton">กลับ</button> -->
+        <section id="inventorylist">
+            <h2>รายการเบิกพัสดุทั้งหมด</h2>
+            <div id="inventoryList"></div>
+        </section>
     </main>
     <script src="inventorylist.js"></script>
 </body>
+
 </html>

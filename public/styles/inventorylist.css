@@ -1,47 +1,100 @@
-/* ตั้งค่าพื้นฐานสำหรับหน้า */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
     color: #333;
-    line-height: 1.6;
 }
 
 header {
-    background-color: #2c3e50; /* สีเทาเข้ม */
-    color: #ecf0f1; /* สีขาวนวล */
-    padding: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
     text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a, nav ul li button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* เปลี่ยนพื้นหลังเมื่อ hover */
+}
+
+nav ul li button {
+    background-color: #f44336; /* Red color */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li button:hover {
+    background-color: #c62828;
 }
 
 main {
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.inventory-container {
-    background-color: #ecf0f1; /* สีพื้นหลังเทาอ่อน */
+.card {
+    background-color: #f4f4f4;
+    border-radius: 8px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+#inventoryList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .inventory-item {
-    background-color: #3498db; /* สีน้ำเงิน */
-    color: #fff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8
-    }
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* ใช้ให้เต็มความกว้าง */
+    max-width: 400px; /* จำกัดความกว้างสูงสุด */
+}
+
+.inventory-item h2 {
+    font-size: 20px;
+    margin-top: 0;
+    color: #333;
+}
+
+.inventory-item p {
+    margin: 5px 0;
+    color: #333;
+}
+
+footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}

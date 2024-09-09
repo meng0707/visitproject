@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แก้ไขสถานะคำร้อง</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>ระบบแก้ไขสถานะรายงาน</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
     <header>
-        <h1>แก้ไขสถานะคำร้อง</h1>
+        <h1>📑 ระบบแก้ไขสถานะรายงาน</h1>
         <nav>
             <ul>
-                <li><a href="reportedit.html">สำหรับช่างซ่อม</a></li>
-                <li><a href="report.html">หน้าแจ้งซ่อม</a></li>
-                <li><a href="#">หน้าตรวจสอบรายการแจ้งซ่อม</a></li>
-                <li><a href="inventory.html">หน้าเบิกพัสดุ</a></li>
+                <li><a href="report.html">🔧 ระบบส่งคำร้องแจ้งซ่อม</a></li>
+                <li><a href="dashboard.html">📄 รายการแจ้งซ่อมทั้งหมด</a></li>
+                <li><a href="inventory.html">📦 ระบบส่งคำร้องเบิกพัสดุ</a></li>
+                <li><a href="inventorylist.html">📄 รายการเบิกพัสดุทั้งหมด</a></li>
                 <li><button id="logout">ออกจากระบบ</button></li>
             </ul>
         </nav>
@@ -37,17 +39,14 @@
 
             <button type="submit">อัปเดตสถานะ</button>
         </form>
-            <section class="profile">
-                <h2>User Profile</h2>
-                <!-- เพิ่มข้อมูลผู้ใช้ที่นี่ -->
-            </section>
-            <section id="reports">
-                <h2>รายงานล่าสุด</h2>
-                <div id="reportList"></div>
+        <section id="reports">
+            <h2>รายงานแจ้งซ่อมทั้งหมด</h2>
+            <div id="reportList"></div>
 
-            </section>
+        </section>
     </main>
     <script src="dashboard.js"></script>
     <script src="updateStatus.js"></script>
 </body>
+
 </html>

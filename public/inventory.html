@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เบิกพัสดุ</title>
+    <title>ระบบส่งคำร้องแจ้งซ่อม</title>
     <link rel="stylesheet" href="styles/inventory.css">
 </head>
 
 <body>
     <header>
-        <h1>ระบบเบิกพัสดุ</h1>
+        <h1>📦 ระบบส่งคำร้องเบิกพัสดุ</h1>
         <nav>
             <ul>
-                <li><a href="reportedit.html">สำหรับช่างซ่อม</a></li>
-                <li><a href="report.html">หน้าแจ้งซ่อม</a></li>
-                <li><a href="dashboard.html">หน้าตรวจสอบรายการแจ้งซ่อม</a></li>
-                <li><a href="inventory.html">หน้าเบิกพัสดุ</a></li>
+                <li><a href="report.html">🔧 ระบบส่งคำร้องแจ้งซ่อม</a></li>
+                <li><a href="dashboard.html">📄 รายการแจ้งซ่อมทั้งหมด</a></li>
+                <li><a href="reportedit.html">📑 ระบบแก้ไขสถานะรายงาน</a></li>
+                <li><a href="inventorylist.html">📄 รายการเบิกพัสดุทั้งหมด</a></li>
                 <li><button id="logout">ออกจากระบบ</button></li>
             </ul>
         </nav>
     </header>
     <main>
         <section id="inventory">
-            <h2>เบิกพัสดุ</h2>
+            <h2>ส่งคำร้องเบิกพัสดุ</h2>
             <form id="inventoryForm">
                 <label for="category">ประเภท:</label>
                 <select id="category" name="category" required>
@@ -43,7 +43,7 @@
 
                 <input type="hidden" id="receivedDate" name="receivedDate"><!-- Hidden field for auto timestamp -->
 
-                <button type="submit">ส่งคำร้องขอเบิกพัสดุ</button>
+                <button type="submit">ยืนยัน</button>
             </form>
         </section>
     </main>

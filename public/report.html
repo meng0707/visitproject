@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ส่งคำร้องแจ้งซ่อม</title>
+    <title>ระบบส่งคำร้องแจ้งซ่อม</title>
     <link rel="stylesheet" href="styles/report.css">
 </head>
 <body>
     <header>
-        <h1>ส่งคำร้องแจ้งซ่อม</h1>
+        <h1>🔧 ระบบส่งคำร้องแจ้งซ่อม</h1>
         <nav>
             <ul>
-                <li><a href="reportedit.html">สำหรับช่างซ่อม</a></li>
-                <li><a href="report.html">หน้าแจ้งซ่อม</a></li>
-                <li><a href="dashboard.html">หน้าตรวจสอบรายการแจ้งซ่อม</a></li>
-                <li><a href="inventory.html">หน้าเบิกพัสดุ</a></li>
+                <li><a href="dashboard.html">📄 รายการแจ้งซ่อมทั้งหมด</a></li>
+                <li><a href="reportedit.html">📑 ระบบแก้ไขสถานะรายงาน</a></li>
+                <li><a href="inventory.html">📦 ระบบส่งคำร้องเบิกพัสดุ</a></li>
+                <li><a href="inventorylist.html">📄 รายการเบิกพัสดุทั้งหมด</a></li>
                 <li><button id="logout">ออกจากระบบ</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <h2>ส่งคำร้องแจ้งซ่อม</h2>
         <form id="repairForm">
             <label for="title">หัวข้อ:</label>
             <select id="title" name="title" required>

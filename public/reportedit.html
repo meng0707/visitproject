@@ -21,28 +21,22 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <form id="updateStatusForm">
             <label for="reportId">ID รายงาน:</label>
             <input type="text" id="reportId" name="reportId" required><br>
-
             <label for="status">สถานะ:</label>
             <select id="status" name="status" required>
-                <option value="Pending">รอดำเนินการ</option>
-                <option value="Awaiting Inspection">รอตรวจสอบ</option>
-                <option value="In Repair">กำลังซ่อม</option>
-                <option value="Repair Completed">การซ่อมเสร็จสิ้น</option>
-                <option value="Repair Successful">ซ่อมได้</option>
-                <option value="Repair Unsuccessful">ซ่อมไม่ได้</option>
+                <option value="รอดำเนินการ">รอดำเนินการ</option>
+                <option value="กำลังดำเนินการ">กำลังดำเนินการ</option>
+                <option value="ดำเนินการเสร็จสิ้น (ซ่อมได้)">ดำเนินการเสร็จสิ้น (ซ่อมได้)</option>
+                <option value="ดำเนินการเสร็จสิ้น (ซ่อมไม่ได้)">ดำเนินการเสร็จสิ้น (ซ่อมไม่ได้)</option>
             </select><br>
-
             <button type="submit">อัปเดตสถานะ</button>
         </form>
         <section id="reports">
             <h2>รายงานแจ้งซ่อมทั้งหมด</h2>
-            <div id="reportList"></div>
-
+            <div id="reportList_2"></div>
         </section>
     </main>
     <script src="dashboard.js"></script>

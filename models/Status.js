@@ -8,14 +8,12 @@ const statusSchema = new mongoose.Schema({
     status: {
         type: String,
         enum: [
-            'Pending', // รอดำเนินการ
-            'Awaiting Inspection', // รอตรวจสอบ
-            'In Repair', // กำลังซ่อม
-            'Repair Completed', // การซ่อมเสร็จสิ้น
-            'Repair Successful', // ซ่อมได้
-            'Repair Unsuccessful' // ซ่อมไม่ได้
+            'รอดำเนินการ',
+            'กำลังดำเนินการ',
+            'ดำเนินการเสร็จสิ้น (ซ่อมได้)',
+            'ดำเนินการเสร็จสิ้น (ซ่อมไม่ได้)'
         ],
-        default: 'Pending' // ค่าเริ่มต้นคือ รอดำเนินการ
+        default: 'รอดำเนินการ'
     },
     createdAt: {
         type: Date,

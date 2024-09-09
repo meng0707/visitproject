@@ -75,14 +75,14 @@ document.getElementById('inventoryForm').addEventListener('submit', async (e) =>
 
         const result = await response.json();
         if (response.ok) {
-            alert('Request submitted successfully');
+            alert('ส่งรายงานเรียบร้อยแล้ว');
         } else {
             console.error('Server Response:', result);
             alert('Error: ' + (result.error || 'Unknown error occurred'));
         }
     } catch (error) {
         console.error('Network Error:', error);
-        alert('Network error occurred. Please check your connection and try again.');
+        alert('เกิดข้อผิดพลาดในการส่งรายงาน');
     }
 });
 

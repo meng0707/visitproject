@@ -8,14 +8,12 @@ const reportSchema = new mongoose.Schema({
     status: {
         type: String,
         enum: [
-            'Pending',
-            'Awaiting Inspection',
-            'In Repair',
-            'Repair Completed',
-            'Repair Successful',
-            'Repair Unsuccessful'
+            'รอดำเนินการ',
+            'กำลังดำเนินการ',
+            'ดำเนินการเสร็จสิ้น (ซ่อมได้)',
+            'ดำเนินการเสร็จสิ้น (ซ่อมไม่ได้)'
         ],
-        default: 'Pending'
+        default: 'รอดำเนินการ'
     },
     createdAt: {
         type: Date,

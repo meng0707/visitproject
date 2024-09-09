@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             console.log(data); // ตรวจสอบข้อมูลที่ได้รับจาก API
-            const reportList = document.getElementById('reportList');
+            const reportList = document.getElementById('reportList_2');
             if (data.length > 0) {
                 data.forEach(report => {
                     const reportDiv = document.createElement('div');
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p><strong>รายละเอียด:</strong> ${report.detail}</p>
                         <p><strong>สถานที่:</strong> ${report.location}</p>
                         <p><strong>สถานะ:</strong> ${report.status}</p>
-                        <p><strong>รายงานเมื่อ:</strong> ${new Date(report.report_at).toLocaleString()}</p>
+                        <p><strong>วันที่แจ้งซ่อม:</strong> ${new Date(report.createdAt).toLocaleString()}</p>
                     `;
                     reportList.appendChild(reportDiv);
                 });

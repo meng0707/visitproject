@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <h2>${item.productName}</h2>
                 <p>ประเภทพัสดุ: ${item.category}</p>
                 <p>จำนวน: ${item.quantity}</p>
-                <p>วันที่เบิกพัสดุ: ${new Date(item.receivedDate).toLocaleDateString()}</p>
+                <p>วันที่เบิกพัสดุ: ${new Date(item.receivedDate).toLocaleString()}</p>
             `;
             inventoryList.appendChild(div);
         });

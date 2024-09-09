@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p><strong>รายละเอียด:</strong> ${report.detail}</p>
                         <p><strong>สถานที่:</strong> ${report.location}</p>
                         <p><strong>สถานะ:</strong> ${report.status}</p>
-                        <p><strong>รายงานเมื่อ:</strong> ${new Date(report.report_at).toLocaleString()}</p>
+                        <p><strong>วันที่แจ้งซ่อม:</strong> ${new Date(report.createdAt).toLocaleString()}</p>
                     `;
                     reportList.appendChild(reportDiv);
                 });
